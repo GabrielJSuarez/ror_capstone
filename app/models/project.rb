@@ -1,4 +1,5 @@
 class Project < ApplicationRecord
   belongs_to :user, foreign_key: 'author_id'
-  has_and_belongs_to_many :groups
+  has_many :logs
+  has_many :groups, through: :logs
 end

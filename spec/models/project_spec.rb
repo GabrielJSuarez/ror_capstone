@@ -5,7 +5,11 @@ RSpec.describe Project, type: :model do
     it { should belong_to(:user) }
   end
 
-  describe 'Event association model with groups' do
-    it { should have_and_belong_to_many(:groups) }
+  describe 'Group association model with events' do
+    it { should have_many(:logs) }
+  end
+
+  describe 'Group association model with events' do
+    it { should have_many(:groups).through(:logs) }
   end
 end
