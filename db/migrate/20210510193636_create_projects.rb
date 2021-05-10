@@ -1,6 +1,6 @@
-class CreateEvents < ActiveRecord::Migration[6.1]
+class CreateProjects < ActiveRecord::Migration[6.1]
   def change
-    create_table :events do |t|
+    create_table :projects do |t|
       t.references :author
       t.string :name
       t.integer :time

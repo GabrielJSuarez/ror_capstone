@@ -3,6 +3,6 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
-  has_many :events, foreign_key: 'author_id'
+  has_many :projects, foreign_key: 'author_id'
   has_many :groups
 end

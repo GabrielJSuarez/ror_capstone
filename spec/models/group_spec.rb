@@ -6,6 +6,6 @@ RSpec.describe Group, type: :model do
   end
 
   describe 'Group association model with events' do
-    it { should have_and_belong_to_many(:events) }
+    it { should have_and_belong_to_many(:projects) }
   end
 end
