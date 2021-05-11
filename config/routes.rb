@@ -4,5 +4,5 @@ Rails.application.routes.draw do
   resources :project, only: %i[index new create show]
   root 'project#index'
 
-  get '/welcome', to: 'welcome#index'
+  get '/home', to: 'home#home'
 end
