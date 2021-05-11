@@ -1,7 +1,22 @@
 <% @projects.each do |project| %>
-  <%= project.name %>
-  <%= project.time %>
-  <%= project.created_at %>
+  <div class="card mb-3" style="max-width: 540px;">
+    <div class="row g-0 mx-1">
+      <div class="col-4">
+        <img src="https://robbreport.com/wp-content/uploads/2018/04/gordon-ramsay-1-e1523056498302.jpg?w=1008" alt="..." style="max-width: 130px" class="my-3">
+      </div>
+      <div class="col-8">
+        <div class="card-body ms-2 px-1">
+          <div class="d-flex justify-content-between">
+            <p class="card-title"><%= project.name %></p>
+            <p class="card-text">H: <%= project.time %></p>
+          </div>
+          <p class="card-text"><small class="text-muted"><%= project.created_at %></small></p>
+        </div>
+      </div>
+    </div>
+  </div>
 <% end %>
 
-<%= paginate @projects %>
+<div class="d-flex justify-content-center">
+  <%= paginate @projects %>
+</div>
