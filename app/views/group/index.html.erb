@@ -1,0 +1,15 @@
+<div class="text-center fs-2 py-1 bg-primary text-light">
+  <p class="mb-0">
+    All Groups
+  </p>
+</div>
+
+<div class="mb-feed">
+  <%= display_groups(@groups) %>
+</div>
+
+<div class="fixed-bottom">
+  <div class="d-grid gap-2 p-3 bg-success text-white">
+    <%= button_to 'New Group', new_group_path, class: 'btn btn-outline-light py-2 w-100' %>
+  </div>
+</div>

@@ -5,6 +5,10 @@ class ProjectController < ApplicationController
     @projects = current_user.projects.all
   end
 
+  def external
+    @projects = current_user.projects.order('created_at DESC')
+  end
+
   def new
     @project = current_user.projects.build
   end
