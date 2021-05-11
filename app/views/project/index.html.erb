@@ -1,0 +1,7 @@
+<% @projects.each do |project| %>
+  <%= project.name %>
+  <%= project.time %>
+  <%= project.created_at %>
+<% end %>
+
+<%= paginate @projects %>
