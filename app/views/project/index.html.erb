@@ -1,5 +1,14 @@
+<div class="d-flex justify-content-between mx-2 py-3 align-items-center">
+  <p class="mb-0 fw-light">
+    Total Hours:
+  </p>
+  <%= total_hours(@projects) %>
+</div>
+
 <%= display_projects(@projects) %>
 
-<div class="d-flex justify-content-center">
-  <%= paginate @projects %>
+<div class="fixed-bottom">
+  <div class="d-grid gap-2 p-3 bg-success text-white">
+    <button type="button" class="btn btn-outline-light py-2">New Project</button>
+  </div>
 </div>

@@ -2,7 +2,7 @@ class ProjectController < ApplicationController
   before_action :authenticate_user!
 
   def index
-    @projects = Project.all.page params[:page]
+    @projects = Project.all
   end
 
   def new

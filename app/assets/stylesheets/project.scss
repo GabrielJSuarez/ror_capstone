@@ -2,6 +2,16 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
+
+
 .project-img {
-  max-width: 130px;
+  max-width: 100% ;
+}
+
+.fw-light {
+  font-weight: 200!important;
+}
+
+.fz-creation {
+  font-size: 0.6rem;
 }
