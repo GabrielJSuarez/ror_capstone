@@ -1,5 +1,9 @@
-<%= @group.user.name %>
+<div class="text-center fs-2 py-1 bg-primary text-light">
+  <p class="mb-0">
+    <%= @group.name.capitalize %> Projects
+  </p>
+</div>
 
-<%= @group.name %>
-
-<%= @group.created_at %>
+<div class="mb-feed">
+  <%= display_group_projects(@group.projects) %>
+</div>
