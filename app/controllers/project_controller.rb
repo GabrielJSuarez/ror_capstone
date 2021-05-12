@@ -31,7 +31,6 @@ class ProjectController < ApplicationController
   end
 
   def projects
-    @projects = Project.includes(:user)
-    @projects_with_group = @projects.includes(:groups)
+    @projects_with_group = current_user.projects.includes(:groups).where(Project.groups.exists?)
   end
 end
