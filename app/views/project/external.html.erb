@@ -5,5 +5,5 @@
 </div>
 
 <div class="mb-feed">
-  <%= render 'shared/transactions', object: @projects %>
+  <%= render 'shared/transactions', object: display_external_projects(@projects_with_group) %>
 </div>

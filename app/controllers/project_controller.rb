@@ -1,13 +1,10 @@
 class ProjectController < ApplicationController
   before_action :authenticate_user!
+  before_action :projects, only: %i[index external]
 
-  def index
-    @projects = current_user.projects.all
-  end
+  def index; end
 
-  def external
-    @projects = current_user.projects.order('created_at DESC')
-  end
+  def external; end
 
   def new
     @project = current_user.projects.build
@@ -31,5 +28,10 @@ class ProjectController < ApplicationController
 
   def projects_param
     params.require(:project).permit(:name, :time)
+  end
+
+  def projects
+    @projects = Project.includes(:user)
+    @projects_with_group = @projects.includes(:groups)
   end
 end
