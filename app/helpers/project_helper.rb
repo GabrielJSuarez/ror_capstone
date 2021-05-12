@@ -1,8 +1,23 @@
 module ProjectHelper
 
-  def total_hours(projects)
-    time = projects.pluck(:time)
-    time.reduce(0) { |sum, num| sum + num }
+  def total_hours_with_group(projects)
+    time = []
+    projects.each do |project|
+      next unless project.groups.any?
+
+      time << project.time
+    end
+    time.reduce(:+)
+  end
+
+  def total_external_hours(projects)
+    time = []
+    projects.each do |project|
+      next unless project.groups.any? == false
+
+      time << project.time
+    end
+    time.reduce(:+)
   end
 
   def display_projects(projects)

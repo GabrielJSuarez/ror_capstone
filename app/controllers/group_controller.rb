@@ -1,8 +1,8 @@
-class GroupsController < ApplicationController
+class GroupController < ApplicationController
   before_action :authenticate_user!
 
   def index
-    @groups = Group.all
+    @groups = Group.all.order('name ASC')
   end
 
   def show
@@ -23,7 +23,7 @@ class GroupsController < ApplicationController
     end
   end
 
-  private
+    private
 
   def groups_param
     params.require(:group).permit(:name)
