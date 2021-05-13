@@ -7,3 +7,9 @@
 <div class="mb-feed">
   <%= display_group_projects(@group.projects) %>
 </div>
+
+<div class="fixed-bottom">
+  <div class="d-grid gap-2 p-3 bg-success text-white">
+    <%= link_to 'Add Project', new_log_path, class: 'btn btn-outline-light py-2 w-100' %>
+  </div>
+</div>

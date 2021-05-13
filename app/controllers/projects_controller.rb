@@ -1,4 +1,4 @@
-class ProjectController < ApplicationController
+class ProjectsController < ApplicationController
   before_action :authenticate_user!
   before_action :projects, only: %i[index external]
 

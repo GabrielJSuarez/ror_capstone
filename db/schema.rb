@@ -32,7 +32,7 @@ ActiveRecord::Schema.define(version: 2021_05_10_211009) do
     t.index ["project_id"], name: "index_logs_on_project_id"
   end
 
-  create_table "project", force: :cascade do |t|
+  create_table "projects", force: :cascade do |t|
     t.bigint "author_id"
     t.string "name"
     t.integer "time"
@@ -55,5 +55,5 @@ ActiveRecord::Schema.define(version: 2021_05_10_211009) do
   end
 
   add_foreign_key "logs", "groups"
-  add_foreign_key "logs", "project"
+  add_foreign_key "logs", "projects"
 end

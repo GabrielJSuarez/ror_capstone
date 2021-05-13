@@ -16,10 +16,10 @@
             </a>
             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
               <li>
-                <%= link_to 'All My Projects', project_index_path, class: 'dropdown-item' %>
+                <%= link_to 'All My Projects', projects_path, class: 'dropdown-item' %>
               </li>
-              <li><%= link_to 'My External Projects', projects_external_path, class: 'dropdown-item' %></li>
-              <li><%= link_to 'All Groups', group_index_path, class: 'dropdown-item' %></li>
+              <li><%= link_to 'My External Projects', external_path, class: 'dropdown-item' %></li>
+              <li><%= link_to 'All Groups', groups_path, class: 'dropdown-item' %></li>
               <li><hr class="dropdown-divider"></li>
               <li><%= link_to 'New Project', new_project_path, class: 'dropdown-item' %></li>
               <li><%= link_to 'New Group', new_group_path, class: 'dropdown-item' %></li>

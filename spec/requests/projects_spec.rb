@@ -3,28 +3,28 @@ require 'rails_helper'
 RSpec.describe "Projects", type: :request do
   describe "GET /index" do
     it "returns http success" do
-      get "/project/index"
+      get "/projects/index"
       expect(response).to have_http_status(:success)
     end
   end
 
   describe "GET /new" do
     it "returns http success" do
-      get "/project/new"
+      get "/projects/new"
       expect(response).to have_http_status(:success)
     end
   end
 
   describe "GET /create" do
     it "returns http success" do
-      get "/project/create"
+      get "/projects/create"
       expect(response).to have_http_status(:success)
     end
   end
 
   describe "GET /show" do
     it "returns http success" do
-      get "/project/show"
+      get "/projects/show"
       expect(response).to have_http_status(:success)
     end
   end

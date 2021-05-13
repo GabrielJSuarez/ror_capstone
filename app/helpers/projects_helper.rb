@@ -1,4 +1,4 @@
-module ProjectHelper
+module ProjectsHelper
 
   def total_hours(projects)
     projects.pluck(:time).reduce(:+)
@@ -25,7 +25,7 @@ module ProjectHelper
           content_tag(:div, nil, class: 'col-4') do
             content_tag(:img, nil,
                         src: 'https://robbreport.com/wp-content/uploads/2018/04/gordon-ramsay-1-e1523056498302.jpg?w=1008',
-                        class: 'pt-3 project-img')
+                        class: 'pt-3 projects-img')
           end +
             content_tag(:div, nil, class: 'col-8') do
               content_tag(:div, nil, class: 'card-body ms-2 px-1') do
@@ -50,7 +50,7 @@ module ProjectHelper
           content_tag(:div, nil, class: 'col-4') do
             content_tag(:img, nil,
                         src: 'https://robbreport.com/wp-content/uploads/2018/04/gordon-ramsay-1-e1523056498302.jpg?w=1008',
-                        class: 'pt-3 project-img')
+                        class: 'pt-3 projects-img')
           end +
             content_tag(:div, nil, class: 'col-8') do
               content_tag(:div, nil, class: 'card-body ms-2 px-1') do

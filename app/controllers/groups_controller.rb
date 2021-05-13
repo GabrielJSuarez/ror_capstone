@@ -1,4 +1,4 @@
-class GroupController < ApplicationController
+class GroupsController < ApplicationController
   before_action :authenticate_user!
 
   def index
@@ -7,6 +7,7 @@ class GroupController < ApplicationController
 
   def show
     @group = Group.find(params[:id])
+    session[:current_group] = @group.id
   end
 
   def new

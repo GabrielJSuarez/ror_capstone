@@ -1,4 +1,4 @@
-module GroupHelper
+module GroupsHelper
 
   def display_groups(groups)
     groups.each do |group|
@@ -8,13 +8,13 @@ module GroupHelper
             content_tag(:div, nil, class: 'col-4') do
               content_tag(:img, nil,
                           src: 'https://robbreport.com/wp-content/uploads/2018/04/gordon-ramsay-1-e1523056498302.jpg?w=1008',
-                          class: 'pt-3 project-img')
+                          class: 'pt-3 projects-img')
             end +
               content_tag(:div, nil, class: 'col-8') do
                 content_tag(:div, nil, class: 'card-body ms-2 px-1') do
                   content_tag(:div, nil, class: 'd-flex justify-content-betw  een') do
                     link_to(group_path(group)) do
-                      content_tag(:p, group.name, class: 'card-text fs-group text-white')
+                      content_tag(:p, group.name, class: 'card-text fs-groups text-white')
                     end
                   end +
                     content_tag(:p, nil, class: 'card-text') do
