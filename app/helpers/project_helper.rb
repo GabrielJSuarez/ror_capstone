@@ -1,36 +1,12 @@
 module ProjectHelper
 
-  def total_hours_with_group(projects)
-    time = []
-    projects.each do |project|
-      next unless project.groups.any?
-
-      time << project.time
-    end
-    time.reduce(:+)
-  end
-
-  def total_external_hours(projects)
-    time = []
-    projects.each do |project|
-      next unless project.groups.any? == false
-
-      time << project.time
-    end
-    time.reduce(:+)
+  def total_hours(projects)
+    projects.pluck(:time).reduce(:+)
   end
 
   def display_projects(projects)
     projects.each do |project|
-      next unless project.groups.any?
-
       render_item(project)
-    end
-  end
-
-  def display_external_projects(projects)
-    projects.each do |project|
-      render_item(project) if project.groups.any? == false
     end
   end
 

@@ -2,9 +2,13 @@ class ProjectController < ApplicationController
   before_action :authenticate_user!
   before_action :projects, only: %i[index external]
 
-  def index; end
+  def index
+    @projects_with_group = current_user.projects.find(@logs)
+  end
 
-  def external; end
+  def external
+    @projects_without_group = current_user.projects.where.not(id: @logs)
+  end
 
   def new
     @project = current_user.projects.build
@@ -31,6 +35,6 @@ class ProjectController < ApplicationController
   end
 
   def projects
-    @projects_with_group = current_user.projects.includes(:groups).where(Project.groups.exists?)
+    @logs = Log.all.includes(:project).pluck(:project_id).uniq
   end
 end

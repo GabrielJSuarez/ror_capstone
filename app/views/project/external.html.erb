@@ -8,9 +8,9 @@
   <p class="mb-0 fw-light">
     Total Hours:
   </p>
-  <%= total_external_hours(@projects_with_group) %>
+  <%= total_hours(@projects_without_group) %>
 </div>
 
 <div class="mb-feed">
-  <%= render 'shared/transactions', object: display_external_projects(@projects_with_group) %>
+  <%= render 'shared/transactions', object: display_projects(@projects_without_group) %>
 </div>
