@@ -1,5 +1,6 @@
 <%= simple_form_for @project do |f| %>
-  <%= f.input :name %>
-  <%= f.input :time %>
-  <%= f.button :submit %>
+  <%= f.input :name, placeholder: 'Project\'s name' %>
+  <%= f.input :time, placeholder: 'Estimate time' %>
+  <%= f.input :group_ids, as: :select, collection: @groups, prompt: "Select Group" %>
+  <%= f.submit %>
 <% end %>

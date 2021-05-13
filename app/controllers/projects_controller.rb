@@ -12,6 +12,7 @@ class ProjectsController < ApplicationController
 
   def new
     @project = current_user.projects.build
+    @groups = Group.all.map { |u| [u.name, u.id] }
   end
 
   def create
@@ -31,7 +32,7 @@ class ProjectsController < ApplicationController
   private
 
   def projects_param
-    params.require(:project).permit(:name, :time)
+    params.require(:project).permit(:name, :time, :group_ids)
   end
 
   def projects
