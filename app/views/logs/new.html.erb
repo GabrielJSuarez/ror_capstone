@@ -1,3 +1,5 @@
+<%= render 'shared/navbar' %>
+
 <%= simple_form_for @log do |f| %>
   <%= f.input :project_id, collection: @project_options, prompt: "Select your project" %>
   <%= f.submit %>
