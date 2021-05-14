@@ -18,15 +18,20 @@ module ApplicationHelper
     end
   end
 
-  def alerts
-    flash.each do |name, msg|
-      content_tag(:div, nil, class: "alert alert-#{name} alert-dismissible fade show", role: 'alert') do
-        content_tag(:strong, msg) +
-          content_tag(:button, nil, type: 'button',
-                                    class: 'btn-close',
-                                    data: { bs: { dismiss: 'alert' } },
-                                    aria: { label: 'close' })
-      end
+  def flash_messages(name, msg)
+    case name
+    when 'alert'
+      alert('danger', msg)
+    when 'notice'
+      alert('success', msg)
+    else
+      alert(name, msg)
     end
+  end
+
+  private
+
+  def alert(name, msg)
+    content_tag(:div, msg, class: "alert alert-#{name} mb-0", role: 'alert')
   end
 end
