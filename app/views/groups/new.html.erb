@@ -1,6 +1,16 @@
 <%= render 'shared/navbar' %>
 
-<%= simple_form_for @group do |f| %>
-  <%= f.input :name, placeholder: 'Group\'s name' %>
-  <%= f.submit %>
-<% end %>
+<div class="px-2 mt-2">
+  <%= simple_form_for @group do |f| %>
+    <%= f.input :name, required: true,
+                autofocus: true,
+                input_html: { autocomplete: "name", class: 'mb-2' },
+                label: false,
+                placeholder: 'Group\'s name' %>
+    <div class="fixed-bottom">
+      <div class="d-grid gap-2 p-3 bg-primary text-white">
+        <%= f.button :submit, "Create Project", class: 'btn btn-outline-light py-2 w-100' %>
+      </div>
+    </div>
+  <% end %>
+</div>

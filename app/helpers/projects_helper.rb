@@ -1,10 +1,17 @@
 module ProjectsHelper
 
   def total_hours(projects)
-    projects.pluck(:time).reduce(:+)
+    return unless projects.any?
+
+    content_tag(:div, nil, class: 'd-flex justify-content-between mx-2 py-3 align-items-center') do
+      content_tag(:p, 'Total Hours', class: 'mb-0 fw-light') +
+        content_tag(:span, projects.pluck(:time).reduce(:+))
+    end
   end
 
   def display_projects(projects)
+    return unless projects.any?
+
     projects.each do |project|
       render_item(project)
     end

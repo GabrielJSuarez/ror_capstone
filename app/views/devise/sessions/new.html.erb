@@ -6,16 +6,14 @@
       <%= f.input :email,
                   required: false,
                   autofocus: true,
-                  input_html: { autocomplete: "email" },
-                  label: false,
-                  placeholder: 'Email', html_class: 'border-0',
-                  input_html: { class: "border-0 mb-2" } %>
+                  input_html: { autocomplete: "email", class: 'mb-2' },
+                    label: false,
+                  placeholder: 'Email', html_class: 'border-0' %>
       <%= f.input :password,
                   required: false,
-                  input_html: { autocomplete: "current-password" },
+                  input_html: { autocomplete: "current-password", class: "mb-2" },
                   label: false,
-                  placeholder: 'Password',
-                  input_html: { class: "border-0 mb-2" } %>
+                  placeholder: 'Password' %>
     </div>
 
     <%- if devise_mapping.recoverable? && controller_name != 'passwords' && controller_name != 'registrations' %>

@@ -3,7 +3,7 @@ class ProjectsController < ApplicationController
   before_action :projects, only: %i[index external]
 
   def index
-    @projects_with_group = current_user.projects.find(@logs)
+    @projects_with_group = current_user.projects.where(id: @logs)
   end
 
   def external
@@ -19,7 +19,11 @@ class ProjectsController < ApplicationController
     @project = current_user.projects.build(projects_param)
     if @project.save
       flash[:success] = 'Project created successfully!'
-      redirect_to root_path
+      if @project.groups.any?
+        redirect_to projects_path
+      else
+        redirect_to external_path
+      end
     else
       render 'new'
     end

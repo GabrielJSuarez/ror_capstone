@@ -13,7 +13,3 @@
  *= require_tree .
  *= require_self
  */
-
-.mb-feed {
-    padding-bottom: 4.5rem!important;
-}
