@@ -3,5 +3,5 @@ class Group < ApplicationRecord
   has_many :logs
   has_many :projects, through: :logs
   paginates_per 5
-  validates :name, presence: true, length: { minimum: 3, maximum: 20 }
+  validates :name, presence: true, length: { minimum: 6 }, uniqueness: { case_sensitive: false }
 end
