@@ -1,0 +1,18 @@
+development:
+  cloud_name: ginnandjuicemicroverse
+  api_key: '722567542718278'
+  api_secret: 32qcEmc7rYFMAchpgjxAeQn8COA
+  enhance_image_tag: true
+  static_file_support: false
+production:
+  cloud_name: ginnandjuicemicroverse
+  api_key: '722567542718278'
+  api_secret: 32qcEmc7rYFMAchpgjxAeQn8COA
+  enhance_image_tag: true
+  static_file_support: true
+test:
+  cloud_name: ginnandjuicemicroverse
+  api_key: '722567542718278'
+  api_secret: 32qcEmc7rYFMAchpgjxAeQn8COA
+  enhance_image_tag: true
+  static_file_support: false

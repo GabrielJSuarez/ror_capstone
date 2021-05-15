@@ -2,7 +2,7 @@ class GroupsController < ApplicationController
   before_action :authenticate_user!
 
   def index
-    @groups = Group.all.order('name ASC').page params[:page]
+    @groups = Group.all.order('name ASC').with_attached_group_image.page params[:page]
   end
 
   def show
@@ -27,6 +27,6 @@ class GroupsController < ApplicationController
     private
 
   def groups_param
-    params.require(:group).permit(:name)
+    params.require(:group).permit(:name, :group_image)
   end
 end

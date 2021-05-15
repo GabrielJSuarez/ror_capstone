@@ -1,5 +1,5 @@
 FactoryBot.define do
-  factory :event do
+  factory Event do
     author { nil }
     name { "MyString" }
     time { 1 }

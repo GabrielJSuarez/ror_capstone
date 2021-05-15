@@ -2,12 +2,14 @@ require_relative "boot"
 
 require "rails/all"
 
+
 # Require the gems listed in Gemfile, including any gems
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
 
 module RorCapstone
   class Application < Rails::Application
+    config.factory_bot.definition_file_paths = ["custom/factories"]
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 6.1
 
