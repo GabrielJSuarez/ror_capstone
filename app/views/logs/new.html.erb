@@ -1,20 +1,3 @@
 <%= render 'shared/navbar' %>
 
-<div class="px-2 mt-2">
-  <%= simple_form_for @log do |f| %>
-    <%= f.input :project_id,
-                required: true,
-                collection: @project_options,
-                prompt: "Select your project",
-                autofocus: true,
-                input_html: { autocomplete: "name", class: 'mb-2 text-muted' },
-                label: false,
-                selected: @project_options.first %>
-
-    <div class="fixed-bottom">
-      <div class="d-grid gap-2 p-3 bg-primary text-white">
-        <%= f.button :submit, "Add Project", class: 'btn btn-outline-light py-2 w-100' %>
-      </div>
-    </div>
-  <% end %>
-</div>
+<%= check_projects %>
