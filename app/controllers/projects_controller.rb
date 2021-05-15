@@ -19,11 +19,7 @@ class ProjectsController < ApplicationController
     @project = current_user.projects.build(projects_param)
     if @project.save
       flash[:success] = 'Project created successfully!'
-      if @project.groups.any?
-        redirect_to projects_path
-      else
         redirect_to external_path
-      end
     else
       render 'new'
     end
@@ -36,7 +32,7 @@ class ProjectsController < ApplicationController
   private
 
   def projects_param
-    params.require(:project).permit(:name, :time, :group_id)
+    params.require(:project).permit(:name, :time)
   end
 
   def projects

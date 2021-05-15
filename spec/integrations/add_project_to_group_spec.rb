@@ -20,11 +20,8 @@ RSpec.describe 'View and add projects to group', type: :feature do
 
     it 'Check access to the group' do
       expect(page).to have_content 'Test group Projects'
-    end
-
-    it 'checks that a project can be added to the group' do
       click_link 'Add Project'
-      expect(page).to have_content 'Nothing to add, go back'
+      expect(page).to have_content 'nothing to add'
     end
   end
 end

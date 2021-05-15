@@ -49,24 +49,7 @@ RSpec.describe 'View & Create Projects', type: :feature do
       click_link 'New Project'
     end
 
-    it 'creates new project with a group' do
-      fill_in 'project[name]', with: 'Test Project'
-      fill_in 'project[time]', with: '1'
-      select('Test Group', from: 'project[group_ids]')
-      click_button 'Create Project'
-      expect(page).to have_content 'My External Projects'
-      expect(page).to have_content 'Project created successfully!'
-    end
-
-    it 'fails to creates new project with a group' do
-      fill_in 'project[name]', with: ''
-      fill_in 'project[time]', with: '1'
-      select('Test Group', from: 'project[group_ids]')
-      click_button 'Create Project'
-      expect(page).to have_content 'Name can\'t be blank and Name is too short (minimum is 5 characters)'
-    end
-
-    it 'creates new project without a group' do
+    it 'creates new project ' do
       fill_in 'project[name]', with: 'Test Project'
       fill_in 'project[time]', with: '1'
       click_button 'Create Project'
@@ -74,11 +57,12 @@ RSpec.describe 'View & Create Projects', type: :feature do
       expect(page).to have_content 'Project created successfully!'
     end
 
-    it 'creates new project without a group' do
-      fill_in 'project[name]', with: ''
+    it 'creates new project' do
+      fill_in 'project[name]', with: 'Test Project'
       fill_in 'project[time]', with: '1'
       click_button 'Create Project'
-      expect(page).to have_content 'Name can\'t be blank and Name is too short (minimum is 5 characters)'
+      expect(page).to have_content 'My External Projects'
+      expect(page).to have_content 'Project created successfully!'
     end
   end
 end

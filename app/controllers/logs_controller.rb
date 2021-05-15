@@ -27,5 +27,6 @@ class LogsController < ApplicationController
 
   def projects
     @group_project = Group.find(session[:current_group]).projects.pluck(:project_id)
+    @logs = Log.all.includes(:project).pluck(:project_id).uniq
   end
 end
