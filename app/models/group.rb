@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Group < ApplicationRecord
   belongs_to :user
   has_many :logs
@@ -7,5 +9,5 @@ class Group < ApplicationRecord
 
   paginates_per 5
   validates :name, presence: true, length: { minimum: 6 }, uniqueness: { case_sensitive: false }
-  validates :group_image, presence: { message: "Need a picture!" }
+  validates :group_image, presence: { message: 'Need a picture!' }
 end

@@ -1,3 +1,6 @@
+# frozen_string_literal: true
+
+# rubocop:disable Style/Documentation
 class CreateLogs < ActiveRecord::Migration[6.1]
   def change
     create_table :logs do |t|
@@ -8,3 +11,4 @@ class CreateLogs < ActiveRecord::Migration[6.1]
     end
   end
 end
+# rubocop:enable Style/Documentation

@@ -1,3 +1,5 @@
+# rubocop:disable all
+
 # frozen_string_literal: true
 
 # Please do not make direct changes to this file!
@@ -21,7 +23,7 @@ SimpleForm.setup do |config|
   config.boolean_label_class = 'form-check-label'
 
   # How the label text should be generated altogether with the required text.
-  config.label_text = lambda { |label, required, explicit_label| "#{label} #{required}" }
+  config.label_text = ->(label, required, _explicit_label) { "#{label} #{required}" }
 
   # Define the way to render check boxes / radio buttons with labels.
   config.boolean_style = :inline
@@ -44,7 +46,6 @@ SimpleForm.setup do |config|
   # add validation classes to `input_field`
   config.input_field_error_class = 'is-invalid'
   config.input_field_valid_class = 'is-valid'
-
 
   # vertical forms
   #
@@ -135,7 +136,6 @@ SimpleForm.setup do |config|
     b.use :full_error, wrap_with: { tag: 'div', class: 'invalid-feedback d-block' }
     b.use :hint, wrap_with: { tag: 'small', class: 'form-text text-muted' }
   end
-
 
   # horizontal forms
   #
@@ -240,7 +240,6 @@ SimpleForm.setup do |config|
     end
   end
 
-
   # inline forms
   #
   # inline default_wrapper
@@ -268,7 +267,6 @@ SimpleForm.setup do |config|
     b.use :error, wrap_with: { tag: 'div', class: 'invalid-feedback' }
     b.optional :hint, wrap_with: { tag: 'small', class: 'form-text text-muted' }
   end
-
 
   # bootstrap custom forms
   #
@@ -360,7 +358,6 @@ SimpleForm.setup do |config|
     b.use :hint, wrap_with: { tag: 'small', class: 'form-text text-muted' }
   end
 
-
   # Input Group - custom component
   # see example app and config at https://github.com/rafaelfranca/simple_form-bootstrap
   # config.wrappers :input_group, tag: 'div', class: 'form-groups', error_class: 'form-groups-invalid', valid_class: 'form-groups-valid' do |b|
@@ -380,7 +377,6 @@ SimpleForm.setup do |config|
   #   b.use :full_error, wrap_with: { tag: 'div', class: 'invalid-feedback d-block' }
   #   b.use :hint, wrap_with: { tag: 'small', class: 'form-text text-muted' }
   # end
-
 
   # Floating Labels form
   #
@@ -409,21 +405,20 @@ SimpleForm.setup do |config|
     b.use :hint, wrap_with: { tag: 'small', class: 'form-text text-muted' }
   end
 
-
   # The default wrapper to be used by the FormBuilder.
   config.default_wrapper = :vertical_form
 
   # Custom wrappers for input types. This should be a hash containing an input
   # type as key and the wrapper that will be used for all inputs with specified type.
   config.wrapper_mappings = {
-    boolean:       :vertical_boolean,
-    check_boxes:   :vertical_collection,
-    date:          :vertical_multi_select,
-    datetime:      :vertical_multi_select,
-    file:          :vertical_file,
+    boolean: :vertical_boolean,
+    check_boxes: :vertical_collection,
+    date: :vertical_multi_select,
+    datetime: :vertical_multi_select,
+    file: :vertical_file,
     radio_buttons: :vertical_collection,
-    range:         :vertical_range,
-    time:          :vertical_multi_select
+    range: :vertical_range,
+    time: :vertical_multi_select
   }
 
   # enable custom form wrappers
@@ -438,3 +433,4 @@ SimpleForm.setup do |config|
   #   time:          :custom_multi_select
   # }
 end
+# rubocop:enable all

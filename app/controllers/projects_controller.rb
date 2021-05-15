@@ -1,3 +1,7 @@
+# rubocop:disable all
+
+# frozen_string_literal: true
+
 class ProjectsController < ApplicationController
   before_action :authenticate_user!
   before_action :projects, only: %i[index external]
@@ -19,7 +23,7 @@ class ProjectsController < ApplicationController
     @project = current_user.projects.build(projects_param)
     if @project.save
       flash[:success] = 'Project created successfully!'
-        redirect_to external_path
+      redirect_to external_path
     else
       render 'new'
     end
@@ -39,3 +43,4 @@ class ProjectsController < ApplicationController
     @logs = Log.all.includes(:project).pluck(:project_id).uniq
   end
 end
+# rubocop:enable all

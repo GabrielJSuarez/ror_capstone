@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
 RSpec.describe 'View and add projects to group', type: :feature do
@@ -12,8 +14,8 @@ RSpec.describe 'View and add projects to group', type: :feature do
       fill_in 'Email', with: 'gabriel@example.com'
       fill_in 'Password', with: 'password'
       click_button 'Log in'
-      group = Group.create(user: user, name: 'Test Group', group_image: fixture_file_upload('picture.jpg', 'image/jpg'))
-      project = Project.create(name: 'Project', time: '1', user: user)
+      Group.create(user: user, name: 'Test Group', group_image: fixture_file_upload('picture.jpg', 'image/jpg'))
+      Project.create(name: 'Project', time: '1', user: user)
       click_link 'All Groups'
       click_link 'Test Group'
     end

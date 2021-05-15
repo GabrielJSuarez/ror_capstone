@@ -1,5 +1,8 @@
-module ApplicationHelper
+# rubocop:disable all
 
+# frozen_string_literal: true
+
+module ApplicationHelper
   def user_name
     return unless signed_in?
 
@@ -35,3 +38,4 @@ module ApplicationHelper
     content_tag(:div, msg, class: "alert alert-#{name} mb-0 proxima-light", role: 'alert')
   end
 end
+# rubocop:enable all

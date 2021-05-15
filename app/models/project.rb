@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Project < ApplicationRecord
   belongs_to :user, foreign_key: 'author_id'
   has_many :logs

@@ -1,5 +1,8 @@
-module ProjectsHelper
+# rubocop:disable all
 
+# frozen_string_literal: true
+
+module ProjectsHelper
   def total_hours(projects)
     return unless projects.any?
 
@@ -82,3 +85,4 @@ module ProjectsHelper
     )
   end
 end
+# rubocop:enable all

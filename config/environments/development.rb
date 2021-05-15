@@ -1,4 +1,8 @@
-require "active_support/core_ext/integer/time"
+# rubocop:disable all
+
+# frozen_string_literal: true
+
+require 'active_support/core_ext/integer/time'
 
 Rails.application.configure do
   config.active_storage.service = :local
@@ -8,7 +12,7 @@ Rails.application.configure do
     Bullet.alert         = true
     Bullet.bullet_logger = true
     Bullet.console       = true
-  # Bullet.growl         = true
+    # Bullet.growl         = true
     Bullet.rails_logger  = true
     Bullet.add_footer    = true
   end
@@ -87,3 +91,4 @@ Rails.application.configure do
   # config.action_cable.disable_request_forgery_protection = true
   config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
 end
+# rubocop:enable all

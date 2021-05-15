@@ -1,3 +1,7 @@
+# rubocop:disable all
+
+# frozen_string_literal: true
+
 module LogsHelper
   def check_projects
     if @project_options.any?
@@ -7,3 +11,4 @@ module LogsHelper
     end
   end
 end
+# rubocop:enable all

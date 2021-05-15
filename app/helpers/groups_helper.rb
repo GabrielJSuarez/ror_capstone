@@ -1,5 +1,8 @@
-module GroupsHelper
+# rubocop:disable all
 
+# frozen_string_literal: true
+
+module GroupsHelper
   def display_groups(groups)
     groups.each do |group|
       concat(
@@ -27,5 +30,5 @@ module GroupsHelper
       )
     end
   end
-
 end
+# rubocop:enable all

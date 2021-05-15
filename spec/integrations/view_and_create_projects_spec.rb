@@ -1,12 +1,15 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
+# rubocop:disable Metrics/BlockLength
 RSpec.describe 'View & Create Projects', type: :feature do
   describe 'Use profile page links' do
     before do
-      user = User.create(name: 'Gabriel',
-                         email: 'gabriel@example.com',
-                         password: 'password',
-                         picture: fixture_file_upload('picture.jpg', 'image/jpg'))
+      User.create(name: 'Gabriel',
+                  email: 'gabriel@example.com',
+                  password: 'password',
+                  picture: fixture_file_upload('picture.jpg', 'image/jpg'))
       visit new_user_session_path
       click_button 'Log in'
       fill_in 'Email', with: 'gabriel@example.com'
@@ -39,7 +42,7 @@ RSpec.describe 'View & Create Projects', type: :feature do
                          email: 'gabriel@example.com',
                          password: 'password',
                          picture: fixture_file_upload('picture.jpg', 'image/jpg'))
-      group = user.groups.build(name: 'Test Group', group_image: fixture_file_upload('picture.jpg', 'image/jpg')).save
+      user.groups.build(name: 'Test Group', group_image: fixture_file_upload('picture.jpg', 'image/jpg')).save
       visit new_user_session_path
       click_button 'Log in'
       fill_in 'Email', with: 'gabriel@example.com'
@@ -66,3 +69,4 @@ RSpec.describe 'View & Create Projects', type: :feature do
     end
   end
 end
+# rubocop:enable Metrics/BlockLength

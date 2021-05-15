@@ -1,12 +1,15 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
+# rubocop:disable Metrics/BlockLength
 RSpec.describe 'Log & Sing in a user', type: :feature do
   describe 'Log in the page' do
     before do
-      user = User.create(name: 'Gabriel',
-                         email: 'gabriel@example.com',
-                         password: 'password',
-                         picture: fixture_file_upload('picture.jpg', 'image/jpg'))
+      User.create(name: 'Gabriel',
+                  email: 'gabriel@example.com',
+                  password: 'password',
+                  picture: fixture_file_upload('picture.jpg', 'image/jpg'))
       visit unauthenticated_root_path
       click_link('LOG IN')
     end
@@ -24,7 +27,6 @@ RSpec.describe 'Log & Sing in a user', type: :feature do
       click_button 'Log in'
       expect(page).to have_content 'Invalid Email or password.'
     end
-
   end
 
   describe 'Sign up in to the page' do
@@ -39,7 +41,7 @@ RSpec.describe 'Log & Sing in a user', type: :feature do
         fill_in 'Email', with: 'gabriel111@example.com'
         fill_in 'Password', with: 'password'
         fill_in 'Password Confirmation', with: 'password'
-        attach_file(Rails.root + 'spec/fixtures/files/picture.jpg')
+        attach_file("#{Rails.root}spec/fixtures/files/picture.jpg")
         click_button 'Sign up'
         expect(page).to have_content 'Welcome! You have signed up successfully'
       end
@@ -49,11 +51,11 @@ RSpec.describe 'Log & Sing in a user', type: :feature do
         fill_in 'Email', with: 'gabriel112@example.com'
         fill_in 'Password', with: ''
         fill_in 'Password Confirmation', with: ''
-        attach_file(Rails.root + 'spec/fixtures/files/picture.jpg')
+        attach_file("#{Rails.root}spec/fixtures/files/picture.jpg")
         click_button 'Sign up'
         expect(page).to have_content 'Please review the problems below:'
       end
-
     end
   end
 end
+# rubocop:enable Metrics/BlockLength

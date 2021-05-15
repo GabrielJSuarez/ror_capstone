@@ -1,3 +1,7 @@
+# rubocop:disable all
+
+# frozen_string_literal: true
+
 class GroupsController < ApplicationController
   before_action :authenticate_user!
 
@@ -24,9 +28,11 @@ class GroupsController < ApplicationController
     end
   end
 
-    private
+  private
 
   def groups_param
     params.require(:group).permit(:name, :group_image)
   end
 end
+
+# rubocop:enable all
