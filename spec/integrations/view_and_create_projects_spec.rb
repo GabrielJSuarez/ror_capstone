@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-# rubocop:disable Metrics/BlockLength
+# rubocop:disable all
 RSpec.describe 'View & Create Projects', type: :feature do
   describe 'Use profile page links' do
     before do
@@ -67,4 +67,4 @@ RSpec.describe 'View & Create Projects', type: :feature do
     end
   end
 end
-# rubocop:enable Metrics/BlockLength
+# rubocop:enable all

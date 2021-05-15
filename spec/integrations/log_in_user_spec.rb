@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-# rubocop:disable Metrics/BlockLength
+# rubocop:disable all
 RSpec.describe 'Log & Sing in a user', type: :feature do
   describe 'Log in the page' do
     before do
@@ -56,4 +56,4 @@ RSpec.describe 'Log & Sing in a user', type: :feature do
     end
   end
 end
-# rubocop:enable Metrics/BlockLength
+# rubocop:enable all
