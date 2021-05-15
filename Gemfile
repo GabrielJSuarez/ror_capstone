@@ -32,7 +32,7 @@ gem 'simple_form'
 
 gem 'devise'
 
-gem 'bullet', group: 'development'
+gem 'bullet'
 
 gem 'kaminari'
 
