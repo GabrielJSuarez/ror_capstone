@@ -8,31 +8,31 @@
       <%= f.input :name,
                   required: true,
                   autofocus: true,
-                  input_html: { autocomplete: "name", class: 'mb-2' },
+                  input_html: { autocomplete: "name", class: 'mb-2 proxima-light' },
                   label: false,
                   placeholder: 'Name' %>
       <%= f.input :email,
                   required: true,
                   autofocus: true,
-                  input_html: { autocomplete: "email", class: 'mb-2', },
+                  input_html: { autocomplete: "email", class: 'mb-2 proxima-light' },
                   label: false,
                   placeholder: 'Email' %>
       <%= f.input :password,
                   required: true,
-                  input_html: { autocomplete: "new-password", class: 'mb-2' },
+                  input_html: { autocomplete: "new-password", class: 'mb-2 proxima-light' },
                   label: false,
                   placeholder: 'Password' %>
       <%= f.input :password_confirmation,
                   required: true,
-                  input_html: { autocomplete: "new-password", class: 'mb-2' },
+                  input_html: { autocomplete: "new-password", class: 'mb-2 proxima-light' },
                   label: false,
                   placeholder: 'Password Confirmation' %>
-      <%= f.file_field :picture, class: 'form-control' %>
+      <%= f.file_field :picture, class: 'form-control proxima-light' %>
     </div>
 
     <div class="fixed-bottom">
       <div class="d-grid gap-2 p-3 bg-primary text-white">
-        <%= f.button :submit, "Sign up", class: 'btn btn-outline-light py-2 w-100' %>
+        <%= f.button :submit, "Sign up", class: 'btn btn-outline-light py-2 w-100 proxima-light' %>
       </div>
     </div>
 

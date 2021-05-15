@@ -3,7 +3,7 @@ module LogsHelper
     if @project_options.any?
       render 'shared/log', object: @log
     else
-      link_to 'Nothing to add, go back', authenticated_root_path, class: 'nav-link text-center'
+      link_to 'Nothing to add, go back', authenticated_root_path, class: 'nav-link text-center proxima-light'
     end
   end
 end

@@ -4,15 +4,15 @@
   <%= simple_form_for @group do |f| %>
     <%= f.input :name, required: true,
                 autofocus: true,
-                input_html: { autocomplete: "name", class: 'mb-2' },
+                input_html: { autocomplete: "name", class: 'mb-2 proxima-light' },
                 label: false,
                 placeholder: 'Group\'s name' %>
 
-    <%= f.file_field :group_image, class: 'form-control' %>
+    <%= f.file_field :group_image, class: 'form-control proxima-light' %>
 
     <div class="fixed-bottom">
       <div class="d-grid gap-2 p-3 bg-primary text-white">
-        <%= f.button :submit, "Create Group", class: 'btn btn-outline-light py-2 w-100' %>
+        <%= f.button :submit, "Create Group", class: 'btn btn-outline-light py-2 w-100 proxima-light' %>
       </div>
     </div>
   <% end %>

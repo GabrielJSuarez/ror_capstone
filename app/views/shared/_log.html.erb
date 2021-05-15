@@ -5,13 +5,13 @@
                 collection: @project_options,
                 prompt: "Select your project",
                 autofocus: true,
-                input_html: { autocomplete: "name", class: 'mb-2 text-muted' },
+                input_html: { autocomplete: "name", class: 'mb-2 proxima-light' },
                 label: false,
                 selected: @project_options.first %>
 
     <div class="fixed-bottom">
       <div class="d-grid gap-2 p-3 bg-primary text-white">
-        <%= f.button :submit, "Add Project", class: 'btn btn-outline-light py-2 w-100' %>
+        <%= f.button :submit, "Add Project", class: 'btn btn-outline-light py-2 w-100 proxima-light' %>
       </div>
     </div>
   <% end %>

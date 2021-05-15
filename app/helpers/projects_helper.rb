@@ -4,8 +4,8 @@ module ProjectsHelper
     return unless projects.any?
 
     content_tag(:div, nil, class: 'd-flex justify-content-between mx-2 py-3 align-items-center') do
-      content_tag(:p, 'Total Hours', class: 'mb-0 fw-light') +
-        content_tag(:span, projects.pluck(:time).reduce(:+))
+      content_tag(:p, 'Total Hours', class: 'mb-0 fw-light proxima-bold') +
+        content_tag(:span, projects.pluck(:time).reduce(:+), class: 'proxima-bold')
     end
   end
 
@@ -43,11 +43,11 @@ module ProjectsHelper
             content_tag(:div, nil, class: 'col-8') do
               content_tag(:div, nil, class: 'card-body ms-2 px-1') do
                 content_tag(:div, nil, class: 'd-flex justify-content-between') do
-                  content_tag(:p, project.name, class: 'card-text fw-light') +
-                    content_tag(:p, project.time, class: 'card-text)')
+                  content_tag(:p, project.name, class: 'card-text proxima-light text-break') +
+                    content_tag(:p, "H: #{project.time}", class: 'card-text proxima-bold')
                 end +
                   content_tag(:p, nil, class: 'card-text') do
-                    content_tag(:small, project.created_at, class: 'text-muted fw-lighter fz-creation mb-1')
+                    content_tag(:small, time_ago_in_words(project.created_at), class: 'text-muted proxima-light fz-creation mb-1')
                   end
               end
             end
@@ -68,16 +68,16 @@ module ProjectsHelper
             content_tag(:div, nil, class: 'col-8') do
               content_tag(:div, nil, class: 'card-body ms-2 px-1') do
                 content_tag(:div, nil, class: 'text-end') do
-                  content_tag(:p, project.name, class: 'card-text fw-light')
+                  content_tag(:p, project.name, class: 'card-text fw-light proxima-light')
                 end +
-                  content_tag(:p, nil, class: 'card-text text-end') do
-                    content_tag(:small, project.created_at, class: 'text-muted fw-lighter fz-creation mb-1')
+                  content_tag(:p, nil, class: 'card-text text-end pt-2') do
+                    content_tag(:small, time_ago_in_words(project.created_at), class: 'text-muted proxima-light fz-creation')
                   end
               end
             end
         end +
           content_tag(:p, "Author: #{User.find(project.author_id).name}",
-                      class: 'card-text mb-1 text-muted fw-light pe-2 text-start')
+                      class: 'card-text mb-1 text-muted fw-light pe-2 text-start proxima-light')
       end
     )
   end

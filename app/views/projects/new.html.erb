@@ -5,18 +5,18 @@
     <%= f.input :name,
                 required: true,
                 autofocus: true,
-                input_html: { autocomplete: "name", class: 'mb-2' },
+                input_html: { autocomplete: "name", class: 'mb-2 proxima-light' },
                 label: false,
                 placeholder: 'Project\'s name' %>
     <%= f.input :time,
                 required: true,
                 autofocus: true,
-                input_html: { autocomplete: "name", class: 'mb-2' },
+                input_html: { autocomplete: "name", class: 'mb-2 proxima-light' },
                 label: false,
                 placeholder: 'Enter estimated hours' %>
     <div class="fixed-bottom">
       <div class="d-grid gap-2 p-3 bg-primary text-white">
-        <%= f.button :submit, "Create Project", class: 'btn btn-outline-light py-2 w-100' %>
+        <%= f.button :submit, "Create Project", class: 'btn btn-outline-light py-2 w-100 proxima-light' %>
       </div>
     </div>
 

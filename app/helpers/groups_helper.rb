@@ -10,13 +10,15 @@ module GroupsHelper
             end +
               content_tag(:div, nil, class: 'col-8') do
                 content_tag(:div, nil, class: 'card-body ms-2') do
-                  content_tag(:div, nil, class: 'd-flex justify-content-betw  een') do
+                  content_tag(:div, nil, class: 'd-flex justify-content-between') do
                     link_to(group_path(group)) do
-                      content_tag(:p, group.name, class: 'card-text fs-groups text-white')
+                      content_tag(:p, group.name, class: 'card-text fs-groups text-white proxima-bold')
                     end
                   end +
-                    content_tag(:p, nil, class: 'card-text') do
-                      content_tag(:small, group.created_at, class: 'text-white fw-lighter fz-creation mb-1')
+                    content_tag(:p, nil, class: 'card-text pt-2') do
+                      content_tag(:small,
+                                  time_ago_in_words(group.created_at),
+                                  class: 'text-white fw-lighter fz-creation proxima-light')
                     end
                 end
               end

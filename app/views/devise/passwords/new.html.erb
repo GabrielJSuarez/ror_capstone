@@ -8,14 +8,14 @@
       <%= f.input :email,
                   required: true,
                   autofocus: true,
-                  input_html: { autocomplete: "email", class: 'mb-2' },
+                  input_html: { autocomplete: "email", class: 'mb-2 proxima-light' },
                   label: false,
                   placeholder: 'Email', html_class: 'border-0' %>
     </div>
 
     <div class="fixed-bottom">
       <div class="d-grid gap-2 p-3 bg-primary text-white">
-        <%= f.button :submit, "Send reset password instructions", class: 'btn btn-outline-light py-2 w-100' %>
+        <%= f.button :submit, "Send reset password instructions", class: 'btn btn-outline-light py-2 w-100 proxima-light' %>
       </div>
     </div>
   <% end %>
