@@ -3,7 +3,7 @@ class LogsController < ApplicationController
 
   def new
     @log = Log.new
-    @project_options = current_user.projects.where.not(id: @logs).map { |u| [u.name, u.id] }
+    @project_options = Project.all.where.not(id: @group_project).map { |u| [u.name, u.id] }
   end
 
   def create
@@ -26,6 +26,6 @@ class LogsController < ApplicationController
   end
 
   def projects
-    @logs = Log.all.includes(:project).pluck(:project_id).uniq
+    @group_project = Group.find(session[:current_group]).projects.pluck(:project_id)
   end
 end
