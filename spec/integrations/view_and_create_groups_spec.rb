@@ -1,8 +1,5 @@
-# frozen_string_literal: true
-
 require 'rails_helper'
 
-# rubocop:disable Metrics/BlockLength
 RSpec.describe 'View & Create Groups', type: :feature do
   describe 'Create new projects' do
     before do
@@ -34,4 +31,3 @@ RSpec.describe 'View & Create Groups', type: :feature do
     end
   end
 end
-# rubocop:enable Metrics/BlockLength
