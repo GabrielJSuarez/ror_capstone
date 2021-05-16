@@ -41,8 +41,8 @@ class ProjectsController < ApplicationController
 
   def projects
     @logs = Log.all.includes(:project).pluck(:project_id).uniq
-    @projects_with_group = current_user.projects.where(id: @logs)
-    @projects_without_group = current_user.projects.where.not(id: @logs)
+    @projects_with_group = current_user.projects.where(id: @logs).order('created_at DESC')
+    @projects_without_group = current_user.projects.where.not(id: @logs).order('created_at DESC')
   end
 end
 # rubocop:enable all

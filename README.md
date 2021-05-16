@@ -1,7 +1,28 @@
 # Ruby On Rails Capstone Project - Group our Transactions
 
 > Capstone project developed as a final project for the ruby on rail module on Microverse, a mobile application that groups the hours logged by a group of freelance programmers working on several projects
-> 
+
+# HOW TO USER:
+
+- Log in or Sign up, for the Sign up process you will need to attach a picture file for your avatar (Make it a good one!)
+
+# YOU MUST BE LOGGED IN TO DO THE NEXT STEPS
+
+- You can create new projects for your user in the Projects or External Projects pages, you can also access the new project link from the menu everywhere in the app. Projects can be created with a group associated or without one. 
+- You can create new groups in the All Groups page, you can also access the group link from the menu everywhere in the app
+- Projects that are associated to a group will appear in 'All Projects', projects without a group will be in 'External Projects'
+- You can add new projects to a group by accessing that group in 'All Groups' and then clicking 'Add Project'
+
+#FEATURES:
+
+- Projects with a group associated will have the first group (that has the association) image
+- Projects without a group will have a placeholder image
+- You can see all projects from all users associated in the group info.
+
+# PREVIEW:
+
+
+
 ## Built With
 
 - Ruby v2.7.2
@@ -46,7 +67,7 @@ Run in terminal [You must have Ruby installed on your system.]
 
 $ `bundle install`
 
-the command bundle install is important to install required gem for the game to start. After you finish type:
+the command $ `bundle install` is important to install required gem for the app to start. After you finish type:
 
 - To create the local database tables in Postgres you will need to have it configured locally and then run:
 
@@ -66,7 +87,7 @@ http://localhost:3000/
 
 - Run tests:
 
-$ `rspec`
+$ `bundle exec rspec`
 
 $ `Rubocop lint`
 
