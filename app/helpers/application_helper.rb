@@ -32,6 +32,36 @@ module ApplicationHelper
     end
   end
 
+  def navbar_dropdown
+    if user_signed_in?
+      content_tag(:li, nil, class: 'dropdown-item proxima-bold') do
+        link_to 'Projects', projects_path, class: 'dropdown-item proxima-bold'
+      end +
+        content_tag(:li, nil, class: 'dropdown-item proxima-bold') do
+          link_to 'External Projects', external_path, class: 'dropdown-item proxima-bold'
+        end +
+        content_tag(:li, nil, class: 'dropdown-item proxima-bold') do
+          link_to 'Groups', groups_path, class: 'dropdown-item proxima-bold'
+        end +
+        content_tag(:li, nil) do
+          content_tag(:hr, nil, class: 'dropdown-divider')
+        end +
+        content_tag(:li, nil, class: 'dropdown-item proxima-bold') do
+          link_to 'Create New Project', new_project_path, class: 'dropdown-item proxima-bold'
+        end +
+        content_tag(:li, nil, class: 'dropdown-item proxima-bold') do
+          link_to 'Create New Group', new_group_path, class: 'dropdown-item proxima-bold'
+        end
+    else
+      content_tag(:li, nil, class: 'dropdown-item proxima-bold') do
+        link_to 'Log in', new_user_session_path, class: 'dropdown-item proxima-bold'
+      end +
+        content_tag(:li, nil, class: 'dropdown-item proxima-bold') do
+          link_to 'Sign in', new_user_registration_path, class: 'dropdown-item proxima-bold'
+        end
+    end
+  end
+
   private
 
   def alert(name, msg)
