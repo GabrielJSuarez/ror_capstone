@@ -21,7 +21,7 @@
 
 # PREVIEW:
 
-<img src="https://github.com/GabrielJSuarez/ror_capstone/raw/development/app/assets/images/landing.jpg?raw=true" style="width: 300px;">
+<img src="https://github.com/GabrielJSuarez/ror_capstone/blob/development/1.png" style="width: 300px;">
 
 ## Built With
 
