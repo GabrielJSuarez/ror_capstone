@@ -23,6 +23,18 @@
 
 <img src="https://github.com/GabrielJSuarez/ror_capstone/blob/development/1.png" style="width: 300px;">
 
+<img src="https://github.com/GabrielJSuarez/ror_capstone/blob/development/2.png" style="width: 300px;">
+
+<img src="https://github.com/GabrielJSuarez/ror_capstone/blob/development/3.png" style="width: 300px;">
+
+<img src="https://github.com/GabrielJSuarez/ror_capstone/blob/development/4.png" style="width: 300px;">
+
+<img src="https://github.com/GabrielJSuarez/ror_capstone/blob/development/5.png" style="width: 300px;">
+
+<img src="https://github.com/GabrielJSuarez/ror_capstone/blob/development/6.png" style="width: 300px;">
+
+<img src="https://github.com/GabrielJSuarez/ror_capstone/blob/development/7.png" style="width: 300px;">
+
 ## Built With
 
 - Ruby v2.7.2
