@@ -1,7 +1,3 @@
-# rubocop:disable all
-
-# frozen_string_literal: true
-
 class ProjectsController < ApplicationController
   before_action :authenticate_user!
   before_action :projects, only: %i[index external]
@@ -45,4 +41,3 @@ class ProjectsController < ApplicationController
     @projects_without_group = current_user.projects.where.not(id: @logs).order('created_at DESC')
   end
 end
-# rubocop:enable all

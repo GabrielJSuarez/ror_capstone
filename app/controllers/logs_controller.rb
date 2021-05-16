@@ -1,7 +1,3 @@
-# rubocop:disable all
-
-# frozen_string_literal: true
-
 class LogsController < ApplicationController
   before_action :authenticate_user!, :projects
 
@@ -34,4 +30,3 @@ class LogsController < ApplicationController
     @logs = Log.all.includes(:project).pluck(:project_id).uniq
   end
 end
-# rubocop:enable all
