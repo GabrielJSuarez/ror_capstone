@@ -20,10 +20,18 @@ module GroupsHelper
                   end +
                     content_tag(:p, nil, class: 'card-text pt-2') do
                       content_tag(:small,
-                                  time_ago_in_words(group.created_at),
+                                  "Created #{time_ago_in_words(group.created_at)} ago",
                                   class: 'text-white fw-lighter fz-creation proxima-light')
                     end
                 end
+              end +
+              content_tag(:div, nil, class: 'd-flex justify-content-between px-1 pt-2') do
+                content_tag(:span, nil) do
+                  link_to 'Edit Group', edit_group_path(group), class: 'btn btn-sm btn-outline-warning fs-groups text-white proxima-bold mb-0 text-decoration-none'
+                end +
+                  content_tag(:span, nil) do
+                    link_to 'Delete Group', group_path(group), method: :delete, data: {:confirm => "Delete Group?" }, class: 'btn btn-sm btn-outline-danger fs-groups text-white proxima-bold mb-0 text-decoration-none'
+                  end
               end
           end
         end

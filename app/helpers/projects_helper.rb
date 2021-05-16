@@ -26,6 +26,10 @@ module ProjectsHelper
     end
   end
 
+  def display_single_project(project)
+    render_item(project)
+  end
+
   private
 
   def render_item(project)
@@ -46,11 +50,13 @@ module ProjectsHelper
             content_tag(:div, nil, class: 'col-8') do
               content_tag(:div, nil, class: 'card-body ms-2 px-1') do
                 content_tag(:div, nil, class: 'd-flex justify-content-between') do
-                  content_tag(:p, project.name, class: 'card-text proxima-light text-break') +
+                  content_tag(:p, nil, class: 'card-text proxima-light text-break') do
+                    link_to project.name, project_path(project), class: 'nav-link p-0 text-muted'
+                  end +
                     content_tag(:p, "H: #{project.time}", class: 'card-text proxima-bold')
                 end +
                   content_tag(:p, nil, class: 'card-text') do
-                    content_tag(:small, time_ago_in_words(project.created_at), class: 'text-muted proxima-light fz-creation mb-1')
+                    content_tag(:small, "Created #{time_ago_in_words(project.created_at)} ago", class: 'text-muted proxima-light fz-creation mb-1')
                   end
               end
             end
@@ -74,7 +80,7 @@ module ProjectsHelper
                   content_tag(:p, project.name, class: 'card-text fw-light proxima-light')
                 end +
                   content_tag(:p, nil, class: 'card-text text-end pt-2') do
-                    content_tag(:small, time_ago_in_words(project.created_at), class: 'text-muted proxima-light fz-creation')
+                    content_tag(:small, "Created #{time_ago_in_words(project.created_at)} ago", class: 'text-muted proxima-light fz-creation')
                   end
               end
             end

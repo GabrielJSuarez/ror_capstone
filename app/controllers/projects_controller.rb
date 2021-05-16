@@ -1,6 +1,7 @@
 class ProjectsController < ApplicationController
   before_action :authenticate_user!
   before_action :projects, only: %i[index external]
+  before_action :set_article, only: %i[edit update show destroy]
 
   def index
     @projects_with_group_pag = @projects_with_group.page params[:page]
@@ -33,8 +34,23 @@ class ProjectsController < ApplicationController
     end
   end
 
-  def show
-    @project = Project.find(params[:id])
+  def show; end
+
+  def edit; end
+
+  def update
+    if @project.update(projects_param)
+      flash[:success] = 'Article was successfully updated'
+      redirect_to project_path(@project)
+    else
+      render 'edit'
+    end
+  end
+
+  def destroy
+    @project.destroy
+    flash[:danger] = 'Article was successfully deleted'
+    redirect_to projects_path
   end
 
   private
@@ -47,5 +63,9 @@ class ProjectsController < ApplicationController
     @logs = Log.all.includes(:project).pluck(:project_id).uniq
     @projects_with_group = current_user.projects.where(id: @logs).order('created_at DESC')
     @projects_without_group = current_user.projects.where.not(id: @logs).order('created_at DESC')
+  end
+
+  def set_article
+    @project = Project.find(params[:id])
   end
 end
