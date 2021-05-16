@@ -38,7 +38,7 @@ RSpec.describe 'Log & Sing in a user', type: :feature do
         fill_in 'Email', with: 'gabriel111@example.com'
         fill_in 'Password', with: 'password'
         fill_in 'Password Confirmation', with: 'password'
-        attach_file("#{Rails.root}spec/fixtures/files/picture.jpg")
+        attach_file("#{Rails.root}/spec/fixtures/files/picture.jpg")
         click_button 'Sign up'
         expect(page).to have_content 'Welcome! You have signed up successfully'
       end
@@ -48,7 +48,7 @@ RSpec.describe 'Log & Sing in a user', type: :feature do
         fill_in 'Email', with: 'gabriel112@example.com'
         fill_in 'Password', with: ''
         fill_in 'Password Confirmation', with: ''
-        attach_file("#{Rails.root}spec/fixtures/files/picture.jpg")
+        attach_file("#{Rails.root}/spec/fixtures/files/picture.jpg")
         click_button 'Sign up'
         expect(page).to have_content 'Please review the problems below:'
       end

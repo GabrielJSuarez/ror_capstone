@@ -18,14 +18,14 @@ RSpec.describe 'View & Create Groups', type: :feature do
 
     it 'creates a new group' do
       fill_in 'group[name]', with: 'Test Group'
-      attach_file("#{Rails.root}spec/fixtures/files/picture.jpg")
+      attach_file("#{Rails.root}/spec/fixtures/files/picture.jpg")
       click_button 'Create Group'
       expect(page).to have_content 'Group created!'
     end
 
     it 'fails to creates new project with a group' do
       fill_in 'group[name]', with: ''
-      attach_file("#{Rails.root}spec/fixtures/files/picture.jpg")
+      attach_file("#{Rails.root}/spec/fixtures/files/picture.jpg")
       click_button 'Create Group'
       expect(page).to have_content 'Name can\'t be blank and Name is too short (minimum is 6 characters)'
     end
