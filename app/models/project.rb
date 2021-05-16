@@ -4,4 +4,5 @@ class Project < ApplicationRecord
   has_many :groups, through: :logs
   validates :name, presence: true, length: { minimum: 5 }, uniqueness: { case_sensitive: false }
   validates :time, presence: true, numericality: { only_integer: true }
+  paginates_per 5
 end

@@ -7,11 +7,11 @@ class ProjectsController < ApplicationController
   before_action :projects, only: %i[index external]
 
   def index
-    @projects_with_group = current_user.projects.where(id: @logs)
+    @projects_with_group_pag = @projects_with_group.page params[:page]
   end
 
   def external
-    @projects_without_group = current_user.projects.where.not(id: @logs)
+    @projects_without_group_pag = @projects_without_group.page params[:page]
   end
 
   def new
@@ -41,6 +41,8 @@ class ProjectsController < ApplicationController
 
   def projects
     @logs = Log.all.includes(:project).pluck(:project_id).uniq
+    @projects_with_group = current_user.projects.where(id: @logs)
+    @projects_without_group = current_user.projects.where.not(id: @logs)
   end
 end
 # rubocop:enable all
