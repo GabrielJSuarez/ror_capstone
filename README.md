@@ -21,9 +21,7 @@
 
 # PREVIEW:
 
-<img src="https://github.com/GabrielJSuarez/ror_capstone/blob/development/app/assets/images/landing.jpg?raw=true "Screenshot"" alt="drawing" width="200"/>
-
-![Alt text](https://github.com/GabrielJSuarez/ror_capstone/blob/development/app/assets/images/landing.jpg?raw=true "Screenshot")
+![github-small](https://github.com/GabrielJSuarez/ror_capstone/blob/development/app/assets/images/landing.jpg?raw=true "Screenshot")
 
 ## Built With
 
