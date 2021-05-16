@@ -12,14 +12,22 @@ class ProjectsController < ApplicationController
 
   def new
     @project = current_user.projects.build
-    @groups = Group.all.map { |u| [u.name, u.id] }
+    @group = Group.all
+    @groups = @group.map { |u| [u.name, u.id] }
   end
 
   def create
-    @project = current_user.projects.build(projects_param)
+    @project = current_user.projects.build(name: projects_param[:name], time: projects_param[:time])
     if @project.save
-      flash[:success] = 'Project created successfully!'
-      redirect_to external_path
+      @group = Group.find_by(id: projects_param[:groups])
+      Log.create(group: @group, project: @project)
+      if @group.nil?
+        redirect_to external_path
+        flash[:success] = 'Project created successfully!'
+      else
+        flash[:success] = 'Project w/group created successfully!'
+        redirect_to projects_path
+      end
     else
       render 'new'
     end
@@ -32,7 +40,7 @@ class ProjectsController < ApplicationController
   private
 
   def projects_param
-    params.require(:project).permit(:name, :time)
+    params.require(:project).permit(:name, :time, :groups)
   end
 
   def projects

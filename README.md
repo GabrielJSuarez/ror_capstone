@@ -67,6 +67,8 @@ Run in terminal [You must have Ruby installed on your system.]
 
 $ `bundle install`
 
+$ `yarn install`
+
 the command $ `bundle install` is important to install required gem for the app to start. After you finish type:
 
 - To create the local database tables in Postgres you will need to have it configured locally and then run:
