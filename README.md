@@ -21,19 +21,19 @@
 
 # PREVIEW:
 
-<img src="https://github.com/GabrielJSuarez/ror_capstone/blob/development/1.png" style="width: 300px;">
+![](https://github.com/GabrielJSuarez/ror_capstone/blob/development/app/assets/images/1.png)
 
-<img src="https://github.com/GabrielJSuarez/ror_capstone/blob/development/2.png" style="width: 300px;">
+![](https://github.com/GabrielJSuarez/ror_capstone/blob/development/app/assets/images/2.png)
 
-<img src="https://github.com/GabrielJSuarez/ror_capstone/blob/development/3.png" style="width: 300px;">
+![](https://github.com/GabrielJSuarez/ror_capstone/blob/development/app/assets/images/3.png)
 
-<img src="https://github.com/GabrielJSuarez/ror_capstone/blob/development/4.png" style="width: 300px;">
+![](https://github.com/GabrielJSuarez/ror_capstone/blob/development/app/assets/images/4.png)
 
-<img src="https://github.com/GabrielJSuarez/ror_capstone/blob/development/5.png" style="width: 300px;">
+![](https://github.com/GabrielJSuarez/ror_capstone/blob/development/app/assets/images/5.png)
 
-<img src="https://github.com/GabrielJSuarez/ror_capstone/blob/development/6.png" style="width: 300px;">
+![](https://github.com/GabrielJSuarez/ror_capstone/blob/development/app/assets/images/6.png)
 
-<img src="https://github.com/GabrielJSuarez/ror_capstone/blob/development/7.png" style="width: 300px;">
+![](https://github.com/GabrielJSuarez/ror_capstone/blob/development/app/assets/images/7.png)
 
 ## Built With
 
