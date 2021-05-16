@@ -2,7 +2,7 @@
 
 > Capstone project developed as a final project for the ruby on rail module on Microverse, a mobile application that groups the hours logged by a group of freelance programmers working on several projects
 
-# HOW TO USER:
+# HOW TO USE:
 
 - Log in or Sign up, for the Sign up process you will need to attach a picture file for your avatar (Make it a good one!)
 
@@ -15,9 +15,16 @@
 
 #FEATURES:
 
+- New projects can be associated with an existing group from the project creation page
 - Projects with a group associated will have the first group (that has the association) image
 - Projects without a group will have a placeholder image
 - You can see all projects from all users associated in the group info.
+
+#ADDED FEATURES:
+
+- List of all users in User meny, you can see all the projects created by each user by clicking on them
+- You can edit and delete Projects
+- Ypu can edit and delete Groups
 
 # PREVIEW:
 
