@@ -4,6 +4,8 @@
 
 # HOW TO USE:
 
+> Video presentation: https://www.loom.com/share/dc6d5f0c291d43aa9bbb45eada641496
+
 - Log in or Sign up, for the Sign up process you will need to attach a picture file for your avatar (Make it a good one!)
 
 # YOU MUST BE LOGGED IN TO DO THE NEXT STEPS
