@@ -7,5 +7,5 @@ class Group < ApplicationRecord
 
   paginates_per 5
   validates :name, presence: true, length: { minimum: 6 }, uniqueness: { case_sensitive: false }
-  validates :group_image, presence: { message: "Need a picture!" }
+  validates :group_image, presence: { message: 'Need a picture!' }
 end

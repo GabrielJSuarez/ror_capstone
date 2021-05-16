@@ -1,12 +1,12 @@
 class GroupsController < ApplicationController
   before_action :authenticate_user!
+  before_action :set_group, only: %i[edit update show destroy]
 
   def index
     @groups = Group.all.order('name ASC').with_attached_group_image.page params[:page]
   end
 
   def show
-    @group = Group.find(params[:id])
     session[:current_group] = @group.id
   end
 
@@ -24,9 +24,30 @@ class GroupsController < ApplicationController
     end
   end
 
-    private
+  def edit; end
+
+  def update
+    if @group.update(groups_param)
+      flash[:success] = 'Article was successfully updated'
+      redirect_to group_path(@group)
+    else
+      render 'edit'
+    end
+  end
+
+  def destroy
+    @group.destroy
+    flash[:danger] = 'Article was successfully deleted'
+    redirect_to groups_path
+  end
+
+  private
 
   def groups_param
     params.require(:group).permit(:name, :group_image)
+  end
+
+  def set_group
+    @group = Group.find(params[:id])
   end
 end

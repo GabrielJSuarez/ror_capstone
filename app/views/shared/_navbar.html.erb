@@ -17,17 +17,7 @@
               Menu
             </a>
             <ul class="dropdown-menu proxima-bold" aria-labelledby="navbarDropdown">
-              <% if user_signed_in? %>
-                <li><%= link_to 'Projects', projects_path, class: 'dropdown-item proxima-bold' %></li>
-                <li><%= link_to 'External Projects', external_path, class: 'dropdown-item proxima-bold' %></li>
-                <li><%= link_to 'Groups', groups_path, class: 'dropdown-item proxima-bold' %></li>
-                <li><hr class="dropdown-divider"></li>
-                <li><%= link_to 'Create New Project', new_project_path, class: 'dropdown-item proxima-bold' %></li>
-                <li><%= link_to 'Create New Group', new_group_path, class: 'dropdown-item proxima-bold' %></li>
-              <% else %>
-                <%= link_to 'Log in', new_user_session_path, class: 'dropdown-item proxima-bold' %>
-                <%= link_to 'Sign in', new_user_registration_path, class: 'dropdown-item proxima-bold' %>
-              <% end %>
+              <%= navbar_dropdown %>
             </ul>
           </li>
           <% if signed_in? %>
