@@ -13,3 +13,19 @@
  *= require_tree .
  *= require_self
  */
+
+.proxima-bold {
+  font-family: 'Lato', sans-serif;
+}
+
+.proxima-light {
+  font-family: 'Lato', sans-serif;
+}
+
+.bg-primary {
+  background-color: #3778c2 !important;
+}
+
+.bg-success {
+  background-color: #5fb523 !important;
+}

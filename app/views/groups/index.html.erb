@@ -1,0 +1,23 @@
+<%= render 'shared/navbar' %>
+
+<div class="text-center fs-2 py-1 bg-primary text-light ">
+  <p class="mb-0 proxima-bold">
+    All Groups
+  </p>
+</div>
+
+<div class="bg-primary pt-3 pb-5" style="height: 100vh">
+  <ul class="list-group list-group-flush px-3 bg-primary pb-feed mb-4">
+    <% display_groups(@groups) %>
+    <div class="pt-3">
+      <%= paginate @groups %>
+    </div>
+  </ul>
+</div>
+
+<div class="fixed-bottom">
+  <div class="d-grid gap-2 p-3 bg-success text-white proxima-light">
+    <%= link_to 'New Group', new_group_path, class: 'btn btn-outline-light py-2 w-100 proxima-light' %>
+  </div>
+</div>
+
